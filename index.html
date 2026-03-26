@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Avatar Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <a href="#" class="logo">
+      <div class="logo-mark">AI</div>
+      <span class="logo-text">Avatar Portfolio</span>
+    </a>
+    <nav>
+      <a href="#showcase" class="active">Showcase</a>
+      <a href="#about">About</a>
+      <a href="mailto:you@email.com" class="nav-cta">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="about">
+    <div class="hero-content fade-in">
+      <div class="hero-eyebrow">AI Voice & Avatar</div>
+      <h1>MY <em>CLONED</em><br>VOICE &amp;<br>AI AVATAR</h1>
+      <p class="hero-desc">
+        A showcase of my AI-generated voice clone and avatar — trained on real samples,
+        capable of speaking across languages. Hear the difference between real and synthetic,
+        then watch it come to life.
+      </p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- SHOWCASE SECTION -->
+  <section class="section" id="showcase">
+    <div class="section-header fade-in">
+      <span class="section-number">01</span>
+      <h2 class="section-title">AI <em>SHOWCASE</em></h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="showcase-grid">
+      <!-- LEFT COLUMN: Audio Showcases -->
+      <div class="left-column">
+
+        <!-- Showcase 1: English Voice -->
+        <div class="audio-card fade-in fade-in-delay-1">
+          <div class="card-label">Showcase 01</div>
+          <div class="card-title">Voice Clone — English</div>
+          <div class="card-subtitle">Real voice sample vs. AI cloned voice in English</div>
+
+          <div class="audio-pair">
+            <!-- Real Voice -->
+            <div class="audio-item">
+              <div class="audio-item-label badge-real">
+                <span class="dot"></span> Real Voice
+              </div>
+              <div class="player" id="player-en-real">
+                <div class="player-controls">
+                  <button class="play-btn" onclick="togglePlay('player-en-real', 'assets/My Sampled Voice.mp3', this)" aria-label="Play">
+                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </button>
+                  <div class="player-info">
+                    <div class="player-filename">real_voice_en.mp3</div>
+                    <div class="player-time" id="time-en-real">0:00 / 0:00</div>
+                  </div>
+                </div>
+                <div class="waveform" id="wave-en-real">
+                  <div class="wave-bar" style="height:8px"></div>
+                  <div class="wave-bar" style="height:14px"></div>
+                  <div class="wave-bar" style="height:10px"></div>
+                  <div class="wave-bar" style="height:18px"></div>
+                  <div class="wave-bar" style="height:12px"></div>
+                  <div class="wave-bar" style="height:20px"></div>
+                  <div class="wave-bar" style="height:9px"></div>
+                  <div class="wave-bar" style="height:15px"></div>
+                  <div class="wave-bar" style="height:11px"></div>
+                  <div class="wave-bar" style="height:7px"></div>
+                  <div class="wave-bar" style="height:16px"></div>
+                  <div class="wave-bar" style="height:13px"></div>
+                </div>
+                <div class="progress-bar" onclick="seekAudio('player-en-real', event)">
+                  <div class="progress-fill" id="progress-en-real"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Clone Voice -->
+            <div class="audio-item">
+              <div class="audio-item-label badge-clone">
+                <span class="dot"></span> Cloned Voice
+              </div>
+              <div class="player" id="player-en-clone">
+                <div class="player-controls">
+                  <button class="play-btn" onclick="togglePlay('player-en-clone', 'assets/Cloned Voice English.mp3', this)" aria-label="Play">
+                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </button>
+                  <div class="player-info">
+                    <div class="player-filename">cloned_voice_en.mp3</div>
+                    <div class="player-time" id="time-en-clone">0:00 / 0:00</div>
+                  </div>
+                </div>
+                <div class="waveform" id="wave-en-clone">
+                  <div class="wave-bar" style="height:12px"></div>
+                  <div class="wave-bar" style="height:18px"></div>
+                  <div class="wave-bar" style="height:9px"></div>
+                  <div class="wave-bar" style="height:15px"></div>
+                  <div class="wave-bar" style="height:20px"></div>
+                  <div class="wave-bar" style="height:8px"></div>
+                  <div class="wave-bar" style="height:14px"></div>
+                  <div class="wave-bar" style="height:11px"></div>
+                  <div class="wave-bar" style="height:17px"></div>
+                  <div class="wave-bar" style="height:10px"></div>
+                  <div class="wave-bar" style="height:19px"></div>
+                  <div class="wave-bar" style="height:13px"></div>
+                </div>
+                <div class="progress-bar" onclick="seekAudio('player-en-clone', event)">
+                  <div class="progress-fill" id="progress-en-clone"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Showcase 2: German Voice -->
+        <div class="audio-card fade-in fade-in-delay-2">
+          <div class="card-label">Showcase 02</div>
+          <div class="card-title">Voice Clone — Deutsch</div>
+          <div class="card-subtitle">Real voice sample attempting German vs. AI cloned voice in German</div>
+
+          <div class="audio-pair">
+            <!-- Real Voice German -->
+            <div class="audio-item">
+              <div class="audio-item-label badge-real">
+                <span class="dot"></span> Real Voice
+              </div>
+              <div class="player" id="player-de-real">
+                <div class="player-controls">
+                  <button class="play-btn" onclick="togglePlay('player-de-real', 'assets/My voice Trying German.mp3', this)" aria-label="Play">
+                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </button>
+                  <div class="player-info">
+                    <div class="player-filename">real_voice_de.mp3</div>
+                    <div class="player-time" id="time-de-real">0:00 / 0:00</div>
+                  </div>
+                </div>
+                <div class="waveform" id="wave-de-real">
+                  <div class="wave-bar" style="height:10px"></div>
+                  <div class="wave-bar" style="height:16px"></div>
+                  <div class="wave-bar" style="height:12px"></div>
+                  <div class="wave-bar" style="height:20px"></div>
+                  <div class="wave-bar" style="height:8px"></div>
+                  <div class="wave-bar" style="height:14px"></div>
+                  <div class="wave-bar" style="height:18px"></div>
+                  <div class="wave-bar" style="height:11px"></div>
+                  <div class="wave-bar" style="height:15px"></div>
+                  <div class="wave-bar" style="height:9px"></div>
+                  <div class="wave-bar" style="height:17px"></div>
+                  <div class="wave-bar" style="height:13px"></div>
+                </div>
+                <div class="progress-bar" onclick="seekAudio('player-de-real', event)">
+                  <div class="progress-fill" id="progress-de-real"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Clone Voice German -->
+            <div class="audio-item">
+              <div class="audio-item-label badge-clone">
+                <span class="dot"></span> Cloned Voice
+              </div>
+              <div class="player" id="player-de-clone">
+                <div class="player-controls">
+                  <button class="play-btn" onclick="togglePlay('player-de-clone', 'assets/Voice Cloned in German.mp3', this)" aria-label="Play">
+                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </button>
+                  <div class="player-info">
+                    <div class="player-filename">cloned_voice_de.mp3</div>
+                    <div class="player-time" id="time-de-clone">0:00 / 0:00</div>
+                  </div>
+                </div>
+                <div class="waveform" id="wave-de-clone">
+                  <div class="wave-bar" style="height:15px"></div>
+                  <div class="wave-bar" style="height:9px"></div>
+                  <div class="wave-bar" style="height:19px"></div>
+                  <div class="wave-bar" style="height:12px"></div>
+                  <div class="wave-bar" style="height:16px"></div>
+                  <div class="wave-bar" style="height:10px"></div>
+                  <div class="wave-bar" style="height:20px"></div>
+                  <div class="wave-bar" style="height:14px"></div>
+                  <div class="wave-bar" style="height:8px"></div>
+                  <div class="wave-bar" style="height:17px"></div>
+                  <div class="wave-bar" style="height:11px"></div>
+                  <div class="wave-bar" style="height:13px"></div>
+                </div>
+                <div class="progress-bar" onclick="seekAudio('player-de-clone', event)">
+                  <div class="progress-fill" id="progress-de-clone"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /left-column -->
+
+      <!-- RIGHT COLUMN: AI Video -->
+      <div class="fade-in fade-in-delay-3">
+        <div class="video-card">
+          <div class="video-card-header">
+            <div class="card-label">Showcase 03</div>
+            <div class="card-title">AI Avatar — Rendered Video</div>
+            <div class="card-subtitle">AI-rendered avatar synced with cloned voice in German</div>
+          </div>
+
+          <div class="video-wrapper">
+            <video id="avatar-video" preload="metadata" poster="">
+              <source src="assets/InfiniteTalk_00001_p87-audio_upmrd_1774534403.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <div class="video-overlay" id="video-overlay" onclick="playVideo()">
+              <button class="video-play-btn" aria-label="Play video">
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="video-card-footer">
+            <span class="video-meta">AI Avatar · German Speech</span>
+            <span class="video-resolution">752 × 1360</span>
+          </div>
+
+          <div class="tech-tags">
+            <span class="tag">Comfyui</span>
+            <span class="tag">Running Hub AI</span>
+            <span class="tag">Voice Clone</span>
+            <span class="tag">German TTS</span>
+            <span class="tag">AI Lipsync</span>
+            <span class="tag">Portrait</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /showcase-grid -->
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-text">AI Avatar Portfolio &nbsp;·&nbsp; <span class="footer-accent">Voice &amp; Video Showcase</span></span>
+    <span class="footer-text">Built with <span class="footer-accent">❤</span> · Deployed on GitHub Pages</span>
+  </footer>
+
+  <!-- AUDIO ELEMENTS (hidden) -->
+  <audio id="audio-en-real"></audio>
+  <audio id="audio-en-clone"></audio>
+  <audio id="audio-de-real"></audio>
+  <audio id="audio-de-clone"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
